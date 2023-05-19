@@ -4,7 +4,7 @@
  *
  * PHP Version 7.4
  *
- * @package   Modules\PL
+ * @package   Modules\IncomeStatement
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -12,7 +12,7 @@
  */
 declare(strict_types=1);
 
-namespace Modules\PL\Controller;
+namespace Modules\IncomeStatement\Controller;
 
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
@@ -22,7 +22,7 @@ use phpOMS\Views\View;
 /**
  * Budgeting controller class.
  *
- * @package Modules\PL
+ * @package Modules\IncomeStatement
  * @license OMS License 1.0
  * @link    https://orange-management.org
  * @since   1.0.0

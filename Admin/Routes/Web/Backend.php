@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use Modules\PL\Controller\BackendController;
-use Modules\PL\Models\PermissionState;
+use Modules\IncomeStatement\Controller\BackendController;
+use Modules\IncomeStatement\Models\PermissionState;
 use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 

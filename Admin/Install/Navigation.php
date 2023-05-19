@@ -4,7 +4,7 @@
  *
  * PHP Version 7.4
  *
- * @package   Modules\PL\Admin\Install
+ * @package   Modules\IncomeStatement\Admin\Install
  * @copyright Dennis Eichhorn
  * @license   OMS License 1.0
  * @version   1.0.0
@@ -12,14 +12,14 @@
  */
 declare(strict_types=1);
 
-namespace Modules\PL\Admin\Install;
+namespace Modules\IncomeStatement\Admin\Install;
 
-use phpOMS\DataStorage\Database\DatabasePool;
+use phpOMS\Application\ApplicationAbstract;
 
 /**
  * Navigation class.
  *
- * @package Modules\PL\Admin\Install
+ * @package Modules\IncomeStatement\Admin\Install
  * @license OMS License 1.0
  * @link    https://orange-management.org
  * @since   1.0.0
@@ -29,15 +29,15 @@ class Navigation
     /**
      * Install navigation providing
      *
-     * @param string       $path   Module path
-     * @param DatabasePool $dbPool Database pool for database interaction
+     * @param ApplicationAbstract $app  Application
+     * @param string              $path Module path
      *
      * @return void
      *
      * @since 1.0.0
      */
-    public static function install(string $path, DatabasePool $dbPool) : void
+    public static function install(ApplicationAbstract $app, string $path) : void
     {
-        \Modules\Navigation\Admin\Installer::installExternal($dbPool, ['path' => __DIR__ . '/Navigation.install.json']);
+        \Modules\Navigation\Admin\Installer::installExternal($app, ['path' => __DIR__ . '/Navigation.install.json']);
     }
 }
