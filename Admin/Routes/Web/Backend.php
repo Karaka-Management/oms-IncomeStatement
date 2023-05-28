@@ -8,12 +8,12 @@ use phpOMS\Router\RouteVerb;
 return [
     '^.*/controlling/pl/dashboard.*$' => [
         [
-            'dest' => '\Modules\PL\Controller\BackendController:viewPLDashboard',
-            'verb' => RouteVerb::GET,
+            'dest'       => '\Modules\PL\Controller\BackendController:viewPLDashboard',
+            'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
-                'type'  => PermissionType::READ,
-                'state' => PermissionState::DASHBOARD,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::DASHBOARD,
             ],
         ],
     ],
