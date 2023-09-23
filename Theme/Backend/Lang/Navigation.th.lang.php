@@ -13,6 +13,6 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Dashboard' => 'Dashboard',
-    'P&L'       => 'P&L',
+    'Dashboard' => '',
+    'P&L'       => '',
 ]];
