@@ -14,7 +14,6 @@
         "name": "Jingga",
         "website": "jingga.app"
     },
-    "description": "Budget Management module.",
     "directory": "IncomeStatement",
     "dependencies": {
         "Controlling": "*"

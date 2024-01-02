@@ -8,7 +8,7 @@ use phpOMS\Router\RouteVerb;
 return [
     '^.*/controlling/pl/dashboard.*$' => [
         [
-            'dest'       => '\Modules\PL\Controller\BackendController:viewPLDashboard',
+            'dest'       => '\Modules\IncomeStatement\Controller\BackendController:viewPLDashboard',
             'verb'       => RouteVerb::GET,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
