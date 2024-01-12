@@ -1,0 +1,271 @@
+[
+    {
+        "name": "1",
+        "l11n": {
+            "en": "Turnover",
+            "de": "Umsatzerlöse"
+        },
+        "account": [2750,2751,2752,2753,2754,2764],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "2",
+        "l11n": {
+            "en": "Cost of sales for services rendered to generate revenue",
+            "de": "Herstellungskosten der zur Erzielung der Umsatzerlöse erbrachten Leistungen"
+        },
+        "account": [],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "3",
+        "l11n": {
+            "en": "Gross profit on sales",
+            "de": "Bruttoergebnis vom Umsatz"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "1-2",
+        "style": "subtotal",
+        "children": []
+    },
+    {
+        "name": "4",
+        "l11n": {
+            "en": "Distribution costs",
+            "de": "Vertriebskosten"
+        },
+        "account": [2315,2316,2317,2318,2500,2501,2504,2508,2510,2520,2590,2594,2660,2661,2666,2700,2705,2707,2709,2710,2711,2712,2713,2714,2715,2716,2720,2723,2725,2726,2727,2728,2729,2730,2731,2732,2735,2736,2737,2740,2741,2742,2743,2744,2746,2747,2749,2760,2762,2790,2745,2746,2747,2749],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "5",
+        "l11n": {
+            "en": "General administrative expenses",
+            "de": "Allgemeine Verwaltungskosten"
+        },
+        "account": [],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "6",
+        "l11n": {
+            "en": "Other operating earnings",
+            "de": "Sonstige betriebliche Erträge"
+        },
+        "account": [2315,2316,2317,2318,2500,2501,2504,2508,2510,2520,2590,2594,2660,2661,2666,2700,2705,2707,2709,2710,2711,2712,2713,2714,2715,2716,2720,2723,2725,2726,2727,2728,2729,2730,2731,2732,2735,2736,2737,2740,2741,2742,2743,2744,2746,2747,2749,2760,2762,2790,2745,2746,2747,2749],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "7",
+        "l11n": {
+            "en": "Other operating expenses",
+            "de": "Sonstige betriebliche Aufwendungen"
+        },
+        "account": [2150,2151,2166,2170,2171,2174,2175,2176,2300,2307,2308,2309,2310,2311,2312,2313,2320,2323,2325,2326,2327,2328,2339,2342,2343,2344,2345,2347,2350,2380,2381,2382,2383,2384,2385,2386,2387,2389,2390,2400,2401,2402,2403,2404,2405,2406,2407,2408,2409,2450,2451,2490,2890,2891,2892,2893,2894,2895,2900],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "8",
+        "l11n": {
+            "en": "Income from participating interests",
+            "de": "Erträge aus Beteiligungen"
+        },
+        "account": [2480,2491,2492,2493,2494,2495,2496,2497,2498,2499,2600,2603,2613,2614,2615,2616,2618,2619,2792,2794],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": [
+            {
+                "name": "9thereof",
+                "l11n": {
+                    "en": "thereof derived from affiliated undertakings",
+                    "de": "davon aus verbundenen Unternehmen"
+                },
+                "account": [],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "9",
+        "l11n": {
+            "en": "Income from other investments and loans forming part of the financial assets",
+            "de": "Erträge aus anderen Wertpapieren und Ausleihungen des Finanzanlagevermögens"
+        },
+        "account": [2620,2621,2622,2623,2625,2626,2640,2641,2646,2647,2648,2649],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": [
+            {
+                "name": "10thereof",
+                "l11n": {
+                    "en": "thereof derived from affiliated undertakings",
+                    "de": "davon aus verbundenen Unternehmen"
+                },
+                "account": [],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "10",
+        "l11n": {
+            "en": "Other interest receivable and similar income",
+            "de": "Sonstige Zinsen und ähnliche Erträge"
+        },
+        "account": [2650,2653,2654,2655,2656,2657,2658,2659,2670,2679,2680,2682,2683,2684,2685,2686,2687,2688,2689],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": [
+            {
+                "name": "11thereof",
+                "l11n": {
+                    "en": "thereof derived from affiliated undertakings",
+                    "de": "davon aus verbundenen Unternehmen"
+                },
+                "account": [],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "11",
+        "l11n": {
+            "en": "Depreciations of financial assets and of investment securities forming part of the current assets",
+            "de": "Abschreibungen auf Finanzanlagen und auf Wertpapiere des Umlaufvermögens"
+        },
+        "account": [],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "12",
+        "l11n": {
+            "en": "Interest payable and similar expenses",
+            "de": "Zinsen und ähnliche Aufwendungen,"
+        },
+        "account": [2105,2106,2107,2108,2109,2110,2111,2113,2114,2115,2116,2117,2118,2119,2120,2123,2124,2125,2126,2127,2128,2129,2130,2139,2140,2141,2142,2143,2144,2145,2146,2147,2148,2149],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": [
+            {
+                "name": "13thereof",
+                "l11n": {
+                    "en": "thereof derived from affiliated undertakings",
+                    "de": "davon aus verbundenen Unternehmen"
+                },
+                "account": [],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "13",
+        "l11n": {
+            "en": "Taxes on income and earnings",
+            "de": "Steuern vom Einkommen und vom Ertrag"
+        },
+        "account": [],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": [
+            {
+                "name": "13a",
+                "l11n": {
+                    "en": "Current",
+                    "de": "Tatsächliche Steuern"
+                },
+                "account": [2200,2203,2204,2208,2209,2210,2213,2216,2218,2219,2250,2255,2260,2265,2281,2283],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "13b",
+                "l11n": {
+                    "en": "Deferred",
+                    "de": "Latente Steuern"
+                },
+                "account": [],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
+    },
+    {
+        "name": "14",
+        "l11n": {
+            "en": "Profit or loss after taxes",
+            "de": "Ergebnis nach Steuern"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "1+2+3+4+5+6+7+8+9+10+11+12+13",
+        "style": "subtotal",
+        "children": []
+    },
+    {
+        "name": "15",
+        "l11n": {
+            "en": "Other taxes",
+            "de": "Sonstige Steuern"
+        },
+        "account": [2285,2287,2289,2375],
+        "type": "category",
+        "formula": "",
+        "style": "category",
+        "children": []
+    },
+    {
+        "name": "16",
+        "l11n": {
+            "en": "Net income for the year / net loss for the year",
+            "de": "Jahresüberschuss/Jahresfehlbetrag"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "14+15",
+        "style": "total",
+        "children": []
+    }
+]

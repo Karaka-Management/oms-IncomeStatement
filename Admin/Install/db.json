@@ -1,0 +1,91 @@
+{
+    "incomestmt_pl": {
+        "name": "incomestmt_pl",
+        "fields": {
+            "incomestmt_pl_id": {
+                "name": "incomestmt_pl_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "incomestmt_pl_code": {
+                "name": "incomestmt_pl_code",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "incomestmt_pl_name": {
+                "name": "incomestmt_pl_name",
+                "type": "VARCHAR(255)",
+                "null": false
+            }
+        }
+    },
+    "incomestmt_pl_element": {
+        "name": "incomestmt_pl_element",
+        "fields": {
+            "incomestmt_pl_element_id": {
+                "name": "incomestmt_pl_element_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "incomestmt_pl_element_code": {
+                "name": "incomestmt_pl_element_code",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "incomestmt_pl_element_order": {
+                "name": "incomestmt_pl_element_order",
+                "type": "INT",
+                "null": false
+            },
+            "incomestmt_pl_element_parent": {
+                "name": "incomestmt_pl_element_parent",
+                "type": "INT",
+                "null": true,
+                "foreignTable": "incomestmt_pl_element",
+                "foreignKey": "incomestmt_pl_element_id"
+            },
+            "incomestmt_pl_element_pl": {
+                "name": "incomestmt_pl_element_pl",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "incomestmt_pl",
+                "foreignKey": "incomestmt_pl_id"
+            }
+        }
+    },
+    "incomestmt_pl_element_l11n": {
+        "name": "incomestmt_pl_element_l11n",
+        "fields": {
+            "incomestmt_pl_element_l11n_id": {
+                "name": "incomestmt_pl_element_l11n_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "incomestmt_pl_element_l11n_title": {
+                "name": "incomestmt_pl_element_l11n_title",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "incomestmt_pl_element_l11n_element": {
+                "name": "incomestmt_pl_element_l11n_element",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "incomestmt_pl_element",
+                "foreignKey": "incomestmt_pl_element_id"
+            },
+            "incomestmt_pl_element_l11n_lang": {
+                "name": "incomestmt_pl_element_l11n_lang",
+                "type": "VARCHAR(2)",
+                "null": false,
+                "foreignTable": "language",
+                "foreignKey": "language_639_1"
+            }
+        }
+    }
+}
