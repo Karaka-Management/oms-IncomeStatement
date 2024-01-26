@@ -21,7 +21,6 @@ use phpOMS\Message\Http\HttpRequest;
 use phpOMS\Message\Http\HttpResponse;
 use phpOMS\Module\InstallerAbstract;
 use phpOMS\Module\ModuleInfo;
-use phpOMS\Uri\HttpUri;
 
 /**
  * Installer class.
@@ -51,7 +50,7 @@ final class Installer extends InstallerAbstract
         self::importStructures($app);
     }
 
-     /**
+    /**
      * Import accounts
      *
      * @param ApplicationAbstract $app Application
@@ -72,7 +71,7 @@ final class Installer extends InstallerAbstract
             }
 
             $response = new HttpResponse();
-            $request  = new HttpRequest(new HttpUri(''));
+            $request  = new HttpRequest();
 
             $request->header->account = 1;
             $request->setData('code', \strtolower(\basename($file)));
@@ -86,21 +85,18 @@ final class Installer extends InstallerAbstract
                 : $responseData['response']->toArray();
 
             $json = \json_decode(\file_get_contents(__DIR__ . '/Install/Coa/' . $file), true);
-
-            foreach ($json as $element) {
-                self::createElement($module, [$element], (int) $incomeStatement['id'], null);
-            }
+            self::createElement($module, $json, (int) $incomeStatement['id'], null);
         }
     }
 
-    private static function createElement(ApiController $module, array $elements, int $structure, int $parent = null)
+    private static function createElement(ApiController $module, array $elements, int $structure, ?int $parent = null) : void
     {
         $order = 0;
         foreach ($elements as $element) {
             ++$order;
 
             $response = new HttpResponse();
-            $request  = new HttpRequest(new HttpUri(''));
+            $request  = new HttpRequest();
 
             $request->header->account = 1;
             $request->setData('code', $element['name']);
@@ -131,7 +127,7 @@ final class Installer extends InstallerAbstract
                 }
 
                 $response = new HttpResponse();
-                $request  = new HttpRequest(new HttpUri(''));
+                $request  = new HttpRequest();
 
                 $request->header->account = 1;
                 $request->setData('title', $l11n);

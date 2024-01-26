@@ -37,9 +37,9 @@ final class IncomeStatementMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'incomestmt_pl_id'          => ['name' => 'incomestmt_pl_id',          'type' => 'int',    'internal' => 'id'],
-        'incomestmt_pl_code'        => ['name' => 'incomestmt_pl_code',        'type' => 'string', 'internal' => 'code', 'autocomplete' => true],
-        'incomestmt_pl_name'        => ['name' => 'incomestmt_pl_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
+        'incomestmt_pl_id'   => ['name' => 'incomestmt_pl_id',          'type' => 'int',    'internal' => 'id'],
+        'incomestmt_pl_code' => ['name' => 'incomestmt_pl_code',        'type' => 'string', 'internal' => 'code', 'autocomplete' => true],
+        'incomestmt_pl_name' => ['name' => 'incomestmt_pl_name',        'type' => 'string', 'internal' => 'name', 'autocomplete' => true],
     ];
 
     /**

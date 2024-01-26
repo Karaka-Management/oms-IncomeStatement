@@ -12,14 +12,71 @@
  */
 declare(strict_types=1);
 
+function render_elements(array $elements, ?int $parent = null) : string
+{
+    $row = '';
+    $fn  = 'render_elements';
+
+    foreach ($elements as $element) {
+        if ($element->parent !== $parent) {
+            continue;
+        }
+
+        $row .= <<<ROW
+        <div>
+            <div style="display: flex; flex-direction: row; align-items: center; background: #ff000099;">
+                <div style="flex: 0; width: 30px; min-width: 30px; padding: 1px;"><label for="iElement{$element->id}-expand" class="btn"><i class="g-icon">add_circle</i></label></div>
+                <div style="flex: 0; width: 150px; min-width: 150px; box-sizing: border-box; padding-left: 0px;">{$element->getL11n()}</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+                <div style="flex: 1; padding: 1px;">+0.00%</div>
+            </div>
+
+            <input id="iElement{$element->id}-expand" type="checkbox" class="hidden">
+            <div class="checked-visibility">
+                {$fn($elements, $element->id)}
+            </div>
+        </div>
+        ROW;
+    }
+
+    return $row;
+}
+
 echo $this->data['nav']->render();
 ?>
-<div class="row" style="font-size: 0.8rem;">
+
+<div class="row" style="font-size: 0.8rem; margin-top: 1rem;">
     <div class="col-xs-12">
         <div style="background: #ff00ff99;">
             <div style="display: flex; flex-direction: row; align-items: center;">
-                <div style="flex: 1; text-align: center;"></div>
-                <div style="box-sizing: border-box; width: 150px; text-align: center;">Category</div>
+                <div style="flex: 0; width: 30px; min-width: 30px; text-align: center;"></div>
+                <div style="flex: 0; width: 150px; min-width: 150px; box-sizing: border-box; text-align: center;">Category</div>
                 <div style="flex: 1; text-align: center;">1</div>
                 <div style="flex: 1; text-align: center;">2</div>
                 <div style="flex: 1; text-align: center;">3</div>
@@ -53,49 +110,8 @@ echo $this->data['nav']->render();
     </div>
 </div>
 
-<?php
-foreach ($this->data['elements'] as $element) :
-    if ($element->parent !== null) {
-        continue;
-    }
-?>
 <div class="row" style="font-size: 0.8rem;">
     <div class="col-xs-12">
-        <div style="display: flex; flex-direction: row; align-items: center; background: #ff000099;">
-            <div style="flex: 1; padding: 1px;"><label for="iSegment1-expand" class="btn"><i class="g-icon">add_circle</i></label></div>
-            <div style="box-sizing: border-box; width: 120px; padding-left: 0px;"><?= $this->printHtml($element->getL11n()); ?></div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-            <div style="flex: 1; padding: 1px;">+0.00%</div>
-        </div>
-
-        <!-- Input here -->
-        <!-- Child here -->
+        <?= \render_elements($this->data['elements'], null); ?>
     </div>
 </div>
-<?php endforeach; ?>

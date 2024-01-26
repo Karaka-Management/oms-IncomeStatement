@@ -38,7 +38,9 @@ class IncomeStatementElement
     public string $code = '';
 
     public int $type = 0;
+
     public string $formula = '';
+
     public int $order = 0;
 
     public int $incomeStatement = 0;
@@ -68,12 +70,12 @@ class IncomeStatementElement
         if ($l11n instanceof BaseStringL11n) {
             $this->l11n = $l11n;
         } elseif (isset($this->l11n) && $this->l11n instanceof BaseStringL11n) {
-            $this->l11n->content = $l11n;
-            $this->l11n->setLanguage($lang);
+            $this->l11n->content  = $l11n;
+            $this->l11n->language = $lang;
         } else {
-            $this->l11n          = new BaseStringL11n();
-            $this->l11n->content = $l11n;
-            $this->l11n->setLanguage($lang);
+            $this->l11n           = new BaseStringL11n();
+            $this->l11n->content  = $l11n;
+            $this->l11n->language = $lang;
         }
     }
 
@@ -97,7 +99,7 @@ class IncomeStatementElement
     public function toArray() : array
     {
         return [
-            'id'    => $this->id,
+            'id' => $this->id,
         ];
     }
 

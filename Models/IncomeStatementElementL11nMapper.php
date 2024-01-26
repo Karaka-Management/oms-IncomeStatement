@@ -37,9 +37,9 @@ final class IncomeStatementElementL11nMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const COLUMNS = [
-        'incomestmt_pl_element_l11n_id'          => ['name' => 'incomestmt_pl_element_l11n_id',          'type' => 'int',    'internal' => 'id'],
-        'incomestmt_pl_element_l11n_title'        => ['name' => 'incomestmt_pl_element_l11n_title',        'type' => 'string', 'internal' => 'content', 'autocomplete' => true],
-        'incomestmt_pl_element_l11n_element'  => ['name' => 'incomestmt_pl_element_l11n_element',  'type' => 'int',    'internal' => 'ref'],
+        'incomestmt_pl_element_l11n_id'      => ['name' => 'incomestmt_pl_element_l11n_id',          'type' => 'int',    'internal' => 'id'],
+        'incomestmt_pl_element_l11n_title'   => ['name' => 'incomestmt_pl_element_l11n_title',        'type' => 'string', 'internal' => 'content', 'autocomplete' => true],
+        'incomestmt_pl_element_l11n_element' => ['name' => 'incomestmt_pl_element_l11n_element',  'type' => 'int',    'internal' => 'ref'],
         'incomestmt_pl_element_l11n_lang'    => ['name' => 'incomestmt_pl_element_l11n_lang',    'type' => 'string', 'internal' => 'language'],
     ];
 
