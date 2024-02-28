@@ -16,6 +16,7 @@
     },
     "directory": "IncomeStatement",
     "dependencies": {
+        "Accounting": "*",
         "Controlling": "*"
     },
     "providing": {

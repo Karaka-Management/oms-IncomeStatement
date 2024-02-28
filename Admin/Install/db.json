@@ -36,9 +36,24 @@
                 "type": "VARCHAR(255)",
                 "null": false
             },
+            "incomestmt_pl_element_formula": {
+                "name": "incomestmt_pl_element_formula",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
+            "incomestmt_pl_element_style": {
+                "name": "incomestmt_pl_element_style",
+                "type": "VARCHAR(255)",
+                "null": false
+            },
             "incomestmt_pl_element_order": {
                 "name": "incomestmt_pl_element_order",
                 "type": "INT",
+                "null": false
+            },
+            "incomestmt_pl_element_expanded": {
+                "name": "incomestmt_pl_element_expanded",
+                "type": "TINYINT(1)",
                 "null": false
             },
             "incomestmt_pl_element_parent": {
@@ -85,6 +100,37 @@
                 "null": false,
                 "foreignTable": "language",
                 "foreignKey": "language_639_1"
+            }
+        }
+    },
+    "incomestmt_pl_element_rel": {
+        "name": "incomestmt_pl_element_rel",
+        "fields": {
+            "incomestmt_pl_element_rel_id": {
+                "name": "incomestmt_pl_element_rel_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "incomestmt_pl_element_rel_order": {
+                "name": "incomestmt_pl_element_rel_order",
+                "type": "INT",
+                "null": true
+            },
+            "incomestmt_pl_element_rel_account": {
+                "name": "incomestmt_pl_element_rel_account",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "accounting_account",
+                "foreignKey": "accounting_account_id"
+            },
+            "incomestmt_pl_element_rel_element": {
+                "name": "incomestmt_pl_element_rel_element",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "incomestmt_pl_element",
+                "foreignKey": "incomestmt_pl_element_id"
             }
         }
     }

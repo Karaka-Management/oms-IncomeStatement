@@ -36,6 +36,18 @@
         "children": []
     },
     {
+        "name": "GPratio",
+        "l11n": {
+            "en": "Gross profit %",
+            "de": "Rohertragsmarge %"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "3/1",
+        "style": "ratio",
+        "children": []
+    },
+    {
         "name": "4",
         "l11n": {
             "en": "Distribution costs",
@@ -266,6 +278,18 @@
         "type": "formula",
         "formula": "14+15",
         "style": "total",
+        "children": []
+    },
+    {
+        "name": "ProfitRatio",
+        "l11n": {
+            "en": "Net profit %",
+            "de": "Jahresergebnis %"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "(14+15)/1",
+        "style": "ratio",
         "children": []
     }
 ]

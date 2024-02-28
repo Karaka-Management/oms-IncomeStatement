@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\IncomeStatement\Controller;
 
+use Modules\Accounting\Models\NullAccountAbstract;
 use Modules\IncomeStatement\Models\IncomeStatement;
 use Modules\IncomeStatement\Models\IncomeStatementElement;
 use Modules\IncomeStatement\Models\IncomeStatementElementL11nMapper;
@@ -163,9 +164,17 @@ final class ApiController extends Controller
     {
         $element                  = new IncomeStatementElement();
         $element->code            = $request->getDataString('code') ?? '';
+        $element->formula            = $request->getDataString('formula') ?? '';
+        $element->style            = $request->getDataString('style') ?? '';
         $element->incomeStatement = $request->getDataInt('pl') ?? 0;
         $element->order           = $request->getDataInt('order') ?? 0;
+        $element->expanded           = $request->getDataBool('expanded') ?? false;
         $element->parent          = $request->getDataInt('parent');
+
+        $accounts = $request->getDataList('accounts');
+        foreach ($accounts as $account) {
+            $element->accounts[] = new NullAccountAbstract((int) $account);
+        }
 
         $element->setL11n(
             $request->getDataString('content') ?? '',

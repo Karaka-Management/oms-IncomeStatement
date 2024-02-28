@@ -41,11 +41,16 @@ class IncomeStatementElement
 
     public string $formula = '';
 
+    public string $style = '';
+
     public int $order = 0;
+    public bool $expanded = false;
 
     public int $incomeStatement = 0;
 
     public ?int $parent = null;
+
+    public array $accounts = [];
 
     /*
      * String l11n

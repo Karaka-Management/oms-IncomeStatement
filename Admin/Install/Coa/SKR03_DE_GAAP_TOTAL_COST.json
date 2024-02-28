@@ -99,12 +99,12 @@
     {
         "name": "GPratio",
         "l11n": {
-            "en": "Gross profit ratio",
-            "de": "Rohertragsmarge"
+            "en": "Gross profit %",
+            "de": "Rohertragsmarge %"
         },
         "account": [],
         "type": "formula",
-        "formula": "GP/(1+2+3+4)",
+        "formula": "GP/1",
         "style": "ratio",
         "children": []
     },
@@ -201,11 +201,109 @@
             "en": "Other operating expenses",
             "de": "Sonstige betriebliche Aufwendungen"
         },
-        "account": [2150,2151,2166,2170,2171,2174,2175,2176,2300,2307,2308,2309,2310,2311,2312,2313,2320,2323,2325,2326,2327,2328,2339,2342,2343,2344,2345,2347,2350,2380,2381,2382,2383,2384,2385,2386,2387,2389,2390,2400,2401,2402,2403,2404,2405,2406,2407,2408,2409,2450,2451,2490,2890,2891,2892,2893,2894,2895,2900],
+        "account": [],
         "type": "category",
         "formula": "",
+        "expanded": true,
         "style": "category",
-        "children": []
+        "children": [
+            {
+                "name": "8a",
+                "l11n": {
+                    "en": "General expenses",
+                    "de": "Allgemeine Aufwendungen"
+                },
+                "account": [2010, 2020, 2307, 2309, 4901, 4902, 4903, 4904, 4905, 4909],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8b",
+                "l11n": {
+                    "en": "Building and property costs",
+                    "de": "Raum- und Grundstückskosten"
+                },
+                "account": [2350, 4200, 4210, 4211, 4212, 4215, 4219, 4220, 4222, 4228, 4229, 4230, 4240, 4250, 4260, 4270, 4280, 4288, 4289, 4290],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8c",
+                "l11n": {
+                    "en": "Donations",
+                    "de": "Spenden / Zuwendungen"
+                },
+                "account": [2380, 2381, 2382, 2383, 2384, 2387, 2389, 2390],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8d",
+                "l11n": {
+                    "en": "Levies",
+                    "de": "Versicherungen / Abgaben"
+                },
+                "account": [4360, 4366, 4370, 4380, 4390, 4396, 4397],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8e",
+                "l11n": {
+                    "en": "Repair / Maintenance",
+                    "de": "Reparatur / Instandhaltung"
+                },
+                "account": [4800, 4801, 4805, 4806, 4809],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8f",
+                "l11n": {
+                    "en": "Vehicle costs",
+                    "de": "KFZ-Kosten"
+                },
+                "account": [4500, 4520, 4530, 4540, 4550, 4560, 4570, 4575, 4580, 4590],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8g",
+                "l11n": {
+                    "en": "Advertising and travel expenses",
+                    "de": "Werbe- und Reisekosten"
+                },
+                "account": [4600, 4605, 4630, 4631, 4632, 4635, 4636, 4639, 4640, 4650, 4651, 4652, 4653, 4654, 4655, 4660, 4663, 4664, 4666, 4668, 4670, 4672, 4673, 4674, 4676, 4678, 4679, 4680, 4681],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            },
+            {
+                "name": "8h",
+                "l11n": {
+                    "en": "Other costs",
+                    "de": "Sonstige Kosten"
+                },
+                "account": [2150, 2151, 2166, 2170, 2171, 2176, 2385, 2386, 4139, 4300, 4301, 4306, 4810, 4969, 4970, 4971, 4975, 4976],
+                "type": "category",
+                "formula": "",
+                "style": "category",
+                "children": []
+            }
+        ]
     },
     {
         "name": "9",
@@ -390,6 +488,18 @@
         "type": "formula",
         "formula": "15+16",
         "style": "total",
+        "children": []
+    },
+    {
+        "name": "ProfitRatio",
+        "l11n": {
+            "en": "Net profit %",
+            "de": "Jahresergebnis %"
+        },
+        "account": [],
+        "type": "formula",
+        "formula": "(15+16)/1",
+        "style": "ratio",
         "children": []
     }
 ]

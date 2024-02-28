@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\IncomeStatement\Models;
 
+use Modules\Accounting\Models\AccountAbstractMapper;
 use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
 use phpOMS\Localization\BaseStringL11n;
 
@@ -39,7 +40,10 @@ final class IncomeStatementElementMapper extends DataMapperFactory
     public const COLUMNS = [
         'incomestmt_pl_element_id'     => ['name' => 'incomestmt_pl_element_id',          'type' => 'int',    'internal' => 'id'],
         'incomestmt_pl_element_code'   => ['name' => 'incomestmt_pl_element_code',        'type' => 'string', 'internal' => 'code', 'autocomplete' => true],
+        'incomestmt_pl_element_formula'   => ['name' => 'incomestmt_pl_element_formula',        'type' => 'string', 'internal' => 'formula', 'autocomplete' => true],
+        'incomestmt_pl_element_style'   => ['name' => 'incomestmt_pl_element_style',        'type' => 'string', 'internal' => 'style', 'autocomplete' => true],
         'incomestmt_pl_element_order'  => ['name' => 'incomestmt_pl_element_order',        'type' => 'int', 'internal' => 'order'],
+        'incomestmt_pl_element_expanded'  => ['name' => 'incomestmt_pl_element_expanded',        'type' => 'bool', 'internal' => 'expanded'],
         'incomestmt_pl_element_parent' => ['name' => 'incomestmt_pl_element_parent',        'type' => 'int', 'internal' => 'parent'],
         'incomestmt_pl_element_pl'     => ['name' => 'incomestmt_pl_element_pl',        'type' => 'int', 'internal' => 'incomeStatement'],
     ];
@@ -57,6 +61,12 @@ final class IncomeStatementElementMapper extends DataMapperFactory
             'self'     => 'incomestmt_pl_element_l11n_element',
             'column'   => 'content',
             'external' => null,
+        ],
+        'accounts' => [
+            'mapper'   => AccountAbstractMapper::class,
+            'table'    => 'incomestmt_pl_element_rel',
+            'self'     => 'incomestmt_pl_element_rel_element',
+            'external' => 'incomestmt_pl_element_rel_account',
         ],
     ];
 
