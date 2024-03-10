@@ -36,6 +36,10 @@ class IncomeStatement
 
     public string $name = '';
 
+    public ?int $unit = null;
+
+    public bool $isDefault = false;
+
     /**
      * {@inheritdoc}
      */

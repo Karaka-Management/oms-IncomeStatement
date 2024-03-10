@@ -18,6 +18,19 @@
                 "name": "incomestmt_pl_name",
                 "type": "VARCHAR(255)",
                 "null": false
+            },
+            "incomestmt_pl_default": {
+                "name": "incomestmt_pl_default",
+                "type": "TINYINT",
+                "null": false
+            },
+            "incomestmt_pl_unit": {
+                "name": "incomestmt_pl_unit",
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "unit",
+                "foreignKey": "unit_id"
             }
         }
     },
