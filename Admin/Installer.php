@@ -153,7 +153,7 @@ final class Installer extends InstallerAbstract
             }
 
             $module->apiIncomeStatementElementCreate($request, $response);
-            $responseData = $response->getData('');
+            $responseData = $response->getDataArray('');
 
             $incomeStatementElement = \is_array($responseData['response'])
                 ? $responseData['response']
