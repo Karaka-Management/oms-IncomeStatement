@@ -44,6 +44,7 @@ class IncomeStatementElement
     public string $style = '';
 
     public int $order = 0;
+
     public bool $expanded = false;
 
     public int $incomeStatement = 0;

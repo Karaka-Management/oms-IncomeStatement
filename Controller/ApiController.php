@@ -164,11 +164,11 @@ final class ApiController extends Controller
     {
         $element                  = new IncomeStatementElement();
         $element->code            = $request->getDataString('code') ?? '';
-        $element->formula            = $request->getDataString('formula') ?? '';
-        $element->style            = $request->getDataString('style') ?? '';
+        $element->formula         = $request->getDataString('formula') ?? '';
+        $element->style           = $request->getDataString('style') ?? '';
         $element->incomeStatement = $request->getDataInt('pl') ?? 0;
         $element->order           = $request->getDataInt('order') ?? 0;
-        $element->expanded           = $request->getDataBool('expanded') ?? false;
+        $element->expanded        = $request->getDataBool('expanded') ?? false;
         $element->parent          = $request->getDataInt('parent');
 
         $accounts = $request->getDataList('accounts');

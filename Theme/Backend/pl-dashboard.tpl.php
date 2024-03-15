@@ -49,7 +49,7 @@ function render_elements(array $elements, ?int $parent = null) : string
 {
     $row = '';
     $fn  = 'render_elements';
-    $acc  = 'render_accounts';
+    $acc = 'render_accounts';
 
     foreach ($elements as $element) {
         if ($element->parent !== $parent) {

@@ -66,6 +66,7 @@ final class BackendController extends Controller
 
         $view->data['languages'] = [];
         if (!empty($view->data['elements'])) {
+            /** @var \phpOMS\Localization\BaseStringL11n[] $tempL11ns */
             $tempL11ns = IncomeStatementElementL11nMapper::getAll()
                 ->where('ref', \reset($view->data['elements'])->id)
                 ->execute();

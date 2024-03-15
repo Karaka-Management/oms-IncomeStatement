@@ -67,6 +67,10 @@ final class Installer extends InstallerAbstract
         $module = $app->moduleManager->get('IncomeStatement', 'Api');
 
         $structures = \scandir(__DIR__ . '/Install/Coa');
+        if ($structures === false) {
+            return;
+        }
+
         foreach ($structures as $file) {
             if ($file === '..' || $file === '.') {
                 continue;
@@ -80,17 +84,35 @@ final class Installer extends InstallerAbstract
             $request->setData('name', \strtr(\basename($file, '.json'), '_', ' '));
 
             $module->apiIncomeStatementCreate($request, $response);
-            $responseData = $response->getData('');
+            $responseData = $response->getDataArray('');
 
             $incomeStatement = \is_array($responseData['response'])
                 ? $responseData['response']
                 : $responseData['response']->toArray();
 
-            $json = \json_decode(\file_get_contents(__DIR__ . '/Install/Coa/' . $file), true);
+            $fileContent = \file_get_contents(__DIR__ . '/Install/Coa/' . $file);
+            if ($fileContent === false) {
+                return;
+            }
+
+            /** @var array $json */
+            $json = \json_decode($fileContent, true);
             self::createElement($module, $json, (int) $incomeStatement['id'], null);
         }
     }
 
+    /**
+     * Create income statement element
+     *
+     * @param ApiController $module    Module
+     * @param array         $elements  Elements to create
+     * @param int           $structure Structure the elements belong to
+     * @param null|int      $parent    Parent element (null = none)
+     *
+     * @return void
+     *
+     * @since 1.0.0
+     */
     private static function createElement(ApiController $module, array $elements, int $structure, ?int $parent = null) : void
     {
         $order = 0;
@@ -116,6 +138,7 @@ final class Installer extends InstallerAbstract
             }
 
             if (!empty($element['account'])) {
+                /** @var AccountAbstract[] $accountObjects */
                 $accountObjects = AccountAbstractMapper::getAll()
                     ->where('code', \array_map(function($account) {
                         return (string) $account;
@@ -123,7 +146,7 @@ final class Installer extends InstallerAbstract
                     ->execute();
 
                 $request->setData('accounts', \implode(',',
-                    \array_map(function (AccountAbstract $account) {
+                    \array_map(function (AccountAbstract $account) : int {
                         return $account->id;
                     }, $accountObjects)
                 ));
