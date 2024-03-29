@@ -14,15 +14,18 @@ declare(strict_types=1);
 
 use phpOMS\Localization\ISO639Enum;
 
-function render_accounts(array $accounts) : string
+function render_accounts(array $accounts, int $depth = 0) : string
 {
+    $padding = $depth * 10;
+    $width = 200 - $padding;
+
     $row = '';
 
     foreach ($accounts as $account) {
         $row .= <<<ROW
         <div class="account data-row">
             <div class="expand-col"></div>
-            <div class="name-col">{$account->code} - {$account->getL11n()}</div>
+            <div class="name-col" style="min-width: {$width}px; width: {$width}px;">{$account->code} - {$account->getL11n()}</div>
             <div>123,456.00</div>
             <div>123,456.00</div>
             <div>123,456.00</div>
@@ -45,11 +48,14 @@ function render_accounts(array $accounts) : string
     return $row;
 }
 
-function render_elements(array $elements, ?int $parent = null) : string
+function render_elements(array $elements, ?int $parent = null, int $depth = 0) : string
 {
     $row = '';
     $fn  = 'render_elements';
     $acc = 'render_accounts';
+
+    $padding = $depth > 0 ? 10 : 0;
+    $width = 200 - $padding * $depth;
 
     foreach ($elements as $element) {
         if ($element->parent !== $parent) {
@@ -69,11 +75,11 @@ function render_elements(array $elements, ?int $parent = null) : string
         $expanded = $element->expanded ? ' checked' : '';
 
         $row .= <<<ROW
-        <div>
+        <div style="padding-left: {$padding}px;">
             <input id="iEle{$element->id}-expand" type="checkbox" class="vh"{$expanded}>
             <div class="{$element->style} data-row">
                 <div class="expand-col">{$expand}</div>
-                <div class="name-col">{$element->getL11n()}</div>
+                <div class="name-col" style="min-width: {$width}px; width: {$width}px;">{$element->getL11n()}</div>
                 <div>123,456.00</div>
                 <div>123,456.00</div>
                 <div>123,456.00</div>
@@ -92,8 +98,8 @@ function render_elements(array $elements, ?int $parent = null) : string
             </div>
 
             <div class="checked-visibility">
-                {$fn($elements, $element->id)}
-                {$acc($element->accounts)}
+                {$fn($elements, $element->id, $depth + 1)}
+                {$acc($element->accounts, $depth)}
             </div>
         </div>
         ROW;
@@ -188,8 +194,8 @@ echo $this->data['nav']->render();
     }
 
     .name-col {
-        width: 150px;
-        min-width: 150px;
+        width: 200px;
+        min-width: 200px;
         padding-left: 0px;
         border-right: 1px solid #000;
         overflow: clip;
@@ -307,7 +313,7 @@ echo $this->data['nav']->render();
             <div class="row sticky" style="font-size: 0.8rem; display: flex;">
                 <div style="display: flex; flex-direction: row; align-items: center; color: #fff; background: #3697db; padding: .5rem 0 .5rem 0">
                     <div style="width: 30px; min-width: 30px; text-align: center;"></div>
-                    <div style="width: 150px; min-width: 150px; box-sizing: border-box; text-align: center;"><?= $this->getHtml('Category'); ?></div>
+                    <div style="width: 200px; min-width: 200px; box-sizing: border-box; text-align: center;"><?= $this->getHtml('Category'); ?></div>
                     <div class="title-cell">1</div>
                     <div class="title-cell">2</div>
                     <div class="title-cell">3</div>
