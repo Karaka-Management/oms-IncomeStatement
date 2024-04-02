@@ -143,7 +143,7 @@ final class Installer extends InstallerAbstract
                     ->where('code', \array_map(function($account) {
                         return (string) $account;
                     }, $element['account']), 'IN')
-                    ->execute();
+                    ->executeGetArray();
 
                 $request->setData('accounts', \implode(',',
                     \array_map(function (AccountAbstract $account) : int {

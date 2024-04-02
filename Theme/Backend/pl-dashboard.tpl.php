@@ -17,7 +17,7 @@ use phpOMS\Localization\ISO639Enum;
 function render_accounts(array $accounts, int $depth = 0) : string
 {
     $padding = $depth * 10;
-    $width = 200 - $padding;
+    $width   = 200 - $padding;
 
     $row = '';
 
@@ -55,7 +55,7 @@ function render_elements(array $elements, ?int $parent = null, int $depth = 0) :
     $acc = 'render_accounts';
 
     $padding = $depth > 0 ? 10 : 0;
-    $width = 200 - $padding * $depth;
+    $width   = 200 - $padding * $depth;
 
     foreach ($elements as $element) {
         if ($element->parent !== $parent) {

@@ -59,17 +59,17 @@ final class BackendController extends Controller
             ->where('l11n/language', $request->getDataString('language') ?? $response->header->l11n->language)
             ->where('accounts/l11n/language', $request->getDataString('language') ?? $response->header->l11n->language)
             ->sort('order', OrderType::ASC)
-            ->execute();
+            ->executeGetArray();
 
         $view->data['structures'] = IncomeStatementMapper::getAll()
-            ->execute();
+            ->executeGetArray();
 
         $view->data['languages'] = [];
         if (!empty($view->data['elements'])) {
             /** @var \phpOMS\Localization\BaseStringL11n[] $tempL11ns */
             $tempL11ns = IncomeStatementElementL11nMapper::getAll()
                 ->where('ref', \reset($view->data['elements'])->id)
-                ->execute();
+                ->executeGetArray();
 
             foreach ($tempL11ns as $l11n) {
                 $view->data['languages'][] = $l11n->language;
