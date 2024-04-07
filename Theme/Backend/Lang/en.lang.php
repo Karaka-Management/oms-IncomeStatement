@@ -21,6 +21,7 @@ return ['IncomeStatement' => [
     'Interval'    => 'Interval',
     'Environment' => 'Environment',
     'Monthly'     => 'Monthly',
+    'Settings'     => 'Settings',
     'Quarterly'   => 'Quarterly',
     'Annually'    => 'Annually',
     'Category'    => 'Category',

@@ -23,6 +23,7 @@ return ['IncomeStatement' => [
     'Monthly'     => 'Monatlich',
     'Quarterly'   => 'Quartalsweise',
     'Annually'    => 'Jährlich',
+    'Settings'    => 'Settings',
     'Category'    => 'Kategorie',
     'Subtotal'    => 'Zwischensumme',
     'Total'       => 'Summe',

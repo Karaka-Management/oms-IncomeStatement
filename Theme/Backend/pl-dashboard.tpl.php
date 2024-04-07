@@ -168,7 +168,7 @@ echo $this->data['nav']->render();
         min-height: 34px;
     }
 
-    .data-row div {
+    .data-row > div {
         padding: .2rem 3px .2rem 3px;
         display: flex;
         align-items: center;
@@ -182,7 +182,7 @@ echo $this->data['nav']->render();
         background: #efefef;
     }
 
-    .data-row div:nth-child(n+3) {
+    .data-row > div:nth-child(n+3) {
         width: 95px;
         justify-content: end;
     }
@@ -203,100 +203,112 @@ echo $this->data['nav']->render();
 </style>
 
 <div class="row">
-    <div class="col-xs-12 col-md-6">
-        <div class="box">
-            <div class="form-group">
-                <div class="input-control">
-                    <select id="iStructure" name="structure" data-action='[{"listener": "change", "action": [{"key": 1, "type": "redirect", "uri": "{%}&structure={#iStructure}", "target": "self"}]}]'>
-                        <?php foreach ($this->data['structures'] as $structure) : ?>
-                            <option value="<?= $structure->id; ?>"<?= $this->request->getDataInt('structure') === $structure->id ? ' selected' : ''; ?>><?= $this->printHtml($structure->name); ?>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+    <div class="box more-container">
+        <label for="more-settings">
+            <span><?= $this->getHtml('Settings'); ?></span>
+            <i class="g-icon expand">chevron_right</i>
+        </label>
+    </div>
+</div>
 
-                <div class="input-control">
-                    <select id="iLanguage" name="language" data-action='[{"listener": "change", "action": [{"key": 1, "type": "redirect", "uri": "{%}&language={#iLanguage}", "target": "self"}]}]'>
-                        <?php foreach ($this->data['languages'] as $language) : ?>
-                            <option value="<?= $language; ?>"<?= $this->request->getDataString('language') === $language ? ' selected' : ''; ?>><?= $this->printHtml(ISO639Enum::getBy2Code($language)); ?>
-                        <?php endforeach; ?>
-                    </select>
+<div class="wf-100 more-container flex">
+    <input id="more-settings" type="checkbox" name="more-container">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <div class="box">
+                <div class="form-group">
+                    <div class="input-control">
+                        <select id="iStructure" name="structure" data-action='[{"listener": "change", "action": [{"key": 1, "type": "redirect", "uri": "{%}&structure={#iStructure}", "target": "self"}]}]'>
+                            <?php foreach ($this->data['structures'] as $structure) : ?>
+                                <option value="<?= $structure->id; ?>"<?= $this->request->getDataInt('structure') === $structure->id ? ' selected' : ''; ?>><?= $this->printHtml($structure->name); ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="input-control">
+                        <select id="iLanguage" name="language" data-action='[{"listener": "change", "action": [{"key": 1, "type": "redirect", "uri": "{%}&language={#iLanguage}", "target": "self"}]}]'>
+                            <?php foreach ($this->data['languages'] as $language) : ?>
+                                <option value="<?= $language; ?>"<?= $this->request->getDataString('language') === $language ? ' selected' : ''; ?>><?= $this->printHtml(ISO639Enum::getBy2Code($language)); ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-xs-12 col-md-6">
-        <section class="portlet">
-            <div class="portlet-body">
-                <div class="form-group">
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Start'); ?></label>
-                        <input type="date">
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <section class="portlet">
+                <div class="portlet-body">
+                    <div class="form-group">
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Start'); ?></label>
+                            <input type="date">
+                        </div>
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Start'); ?></label>
+                            <input type="date">
+                        </div>
                     </div>
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Start'); ?></label>
-                        <input type="date">
+
+                    <div class="form-group">
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Interval'); ?></label>
+                            <select>
+                                <option><?= $this->getHtml('Monthly'); ?>
+                                <option><?= $this->getHtml('Quarterly'); ?>
+                                <option><?= $this->getHtml('Annually'); ?>
+                            </select>
+                        </div>
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Environment'); ?></label>
+                            <select></select>
+                        </div>
                     </div>
                 </div>
+                <div class="portlet-foot">
+                    <input type="submit" value="<?= $this->getHtml('Submit', '0', '0'); ?>">
+                    <input class="close" type="submit" value="<?= $this->getHtml('Reset', '0', '0'); ?>">
+                </div>
+            </section>
+        </div>
 
-                <div class="form-group">
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Interval'); ?></label>
-                        <select>
-                            <option><?= $this->getHtml('Monthly'); ?>
-                            <option><?= $this->getHtml('Quarterly'); ?>
-                            <option><?= $this->getHtml('Annually'); ?>
-                        </select>
+        <div class="col-xs-12 col-md-6">
+            <section class="portlet">
+                <div class="portlet-body">
+                    <div class="form-group">
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Start'); ?></label>
+                            <input type="date">
+                        </div>
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Start'); ?></label>
+                            <input type="date">
+                        </div>
                     </div>
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Environment'); ?></label>
-                        <select></select>
+
+                    <div class="form-group">
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Interval'); ?></label>
+                            <select>
+                                <option><?= $this->getHtml('Monthly'); ?>
+                                <option><?= $this->getHtml('Quarterly'); ?>
+                                <option><?= $this->getHtml('Annually'); ?>
+                            </select>
+                        </div>
+                        <div class="input-control">
+                            <label><?= $this->getHtml('Environment'); ?></label>
+                            <select></select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="portlet-foot">
-                <input type="submit" value="<?= $this->getHtml('Submit', '0', '0'); ?>">
-                <input class="close" type="submit" value="<?= $this->getHtml('Reset', '0', '0'); ?>">
-            </div>
-        </section>
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-        <section class="portlet">
-            <div class="portlet-body">
-                <div class="form-group">
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Start'); ?></label>
-                        <input type="date">
-                    </div>
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Start'); ?></label>
-                        <input type="date">
-                    </div>
+                <div class="portlet-foot">
+                    <input type="submit" value="<?= $this->getHtml('Submit', '0', '0'); ?>">
+                    <input class="close" type="submit" value="<?= $this->getHtml('Reset', '0', '0'); ?>">
                 </div>
-
-                <div class="form-group">
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Interval'); ?></label>
-                        <select>
-                            <option><?= $this->getHtml('Monthly'); ?>
-                            <option><?= $this->getHtml('Quarterly'); ?>
-                            <option><?= $this->getHtml('Annually'); ?>
-                        </select>
-                    </div>
-                    <div class="input-control">
-                        <label><?= $this->getHtml('Environment'); ?></label>
-                        <select></select>
-                    </div>
-                </div>
-            </div>
-            <div class="portlet-foot">
-                <input type="submit" value="<?= $this->getHtml('Submit', '0', '0'); ?>">
-                <input class="close" type="submit" value="<?= $this->getHtml('Reset', '0', '0'); ?>">
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </div>
 

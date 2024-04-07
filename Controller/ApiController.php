@@ -103,7 +103,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Api method to create an account
+     * Api method to create a IncomeStatementElement
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -130,7 +130,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Validate account create request
+     * Validate IncomeStatementElement create request
      *
      * @param RequestAbstract $request Request
      *
@@ -152,7 +152,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Method to create account from request.
+     * Method to create IncomeStatementElement from request.
      *
      * @param RequestAbstract $request Request
      *
@@ -185,7 +185,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Api method to create item attribute l11n
+     * Api method to create IncomeStatementElement l11n
      *
      * @param RequestAbstract  $request  Request
      * @param ResponseAbstract $response Response
@@ -212,7 +212,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Method to create item attribute l11n from request.
+     * Method to create IncomeStatementElement l11n from request.
      *
      * @param RequestAbstract $request Request
      *
@@ -231,7 +231,7 @@ final class ApiController extends Controller
     }
 
     /**
-     * Validate item attribute l11n create request
+     * Validate IncomeStatementElement l11n create request
      *
      * @param RequestAbstract $request Request
      *
