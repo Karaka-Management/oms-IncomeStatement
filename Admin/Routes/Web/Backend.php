@@ -10,7 +10,7 @@ return [
         [
             'dest'       => '\Modules\IncomeStatement\Controller\BackendController:viewPLDashboard',
             'verb'       => RouteVerb::GET,
-            'active' => true,
+            'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
