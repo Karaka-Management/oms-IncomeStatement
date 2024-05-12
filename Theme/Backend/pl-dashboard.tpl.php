@@ -204,7 +204,7 @@ echo $this->data['nav']->render();
 
 <div class="row">
     <div class="box more-container">
-        <label for="more-settings">
+        <label class="more" for="more-settings">
             <span><?= $this->getHtml('Settings'); ?></span>
             <i class="g-icon expand">chevron_right</i>
         </label>
@@ -212,8 +212,8 @@ echo $this->data['nav']->render();
 </div>
 
 <div class="wf-100 more-container flex">
-    <input id="more-settings" type="checkbox" name="more-container">
-    <div class="row">
+    <input class="more" id="more-settings" type="checkbox" name="more-container">
+    <div class="row more">
         <div class="col-xs-12 col-md-6">
             <div class="box">
                 <div class="form-group">
