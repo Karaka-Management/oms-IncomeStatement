@@ -86,8 +86,8 @@ final class Installer extends InstallerAbstract
             $module->apiIncomeStatementCreate($request, $response);
             $responseData = $response->getDataArray('');
 
-            $incomeStatement = \is_array($responseData['response'])
-                ? $responseData['response']
+            $incomeStatement = \is_array($responseData['response'] ?? [])
+                ? ($responseData['response'] ?? [])
                 : $responseData['response']->toArray();
 
             $fileContent = \file_get_contents(__DIR__ . '/Install/Coa/' . $file);
@@ -155,8 +155,8 @@ final class Installer extends InstallerAbstract
             $module->apiIncomeStatementElementCreate($request, $response);
             $responseData = $response->getDataArray('');
 
-            $incomeStatementElement = \is_array($responseData['response'])
-                ? $responseData['response']
+            $incomeStatementElement = \is_array($responseData['response'] ?? [])
+                ? ($responseData['response'] ?? [])
                 : $responseData['response']->toArray();
 
             $isFirst = true;
