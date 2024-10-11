@@ -320,7 +320,7 @@ echo $this->data['nav']->render();
         </ul>
     </div>
     <div class="tab-content">
-    <input type="radio" id="c-tab-1" name="tabular-2"<?= $this->request->uri->fragment === 'c-tab-1' ? ' checked' : ''; ?>>
+    <input type="radio" id="c-tab-1" name="tabular-2"<?= empty($this->request->uri->fragment) || $this->request->uri->fragment === 'c-tab-1' ? ' checked' : ''; ?>>
         <div class="tab">
             <div class="row sticky" style="font-size: 0.8rem; display: flex;">
                 <div style="display: flex; flex-direction: row; align-items: center; color: #fff; background: #3697db; padding: .5rem 0 .5rem 0">
